@@ -3,3 +3,192 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+@media (max-width : 576px) {
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 70%;
+    min-width: 80%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    align-items: center;
+  }
+
+  .nav-bar .hide-on-mobile{
+    display: none !important;
+    
+  }
+  .nav-bar .logo {
+    width: 30px;  
+    height: auto; 
+  }
+
+  .items-display-container {
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+    margin-left: -120px;
+    margin-top: -30px;
+  }
+
+  .items-display-container h5{
+    font-size: 13px;
+  }
+
+  .items-display-container .slick-image img {
+    width: 30px;
+    height: 30px; 
+  }
+
+  .items-display-slider{
+    width: 370px;
+    height: 10px;
+  }
+
+  .restaurant-chains-container {
+    width: 100%; /* Ensure it takes the full width of the screen */
+    padding: 10px; /* Add some padding for better spacing */
+    margin-left: -120px;
+    align-items: center;
+  }
+
+  .restaurant-chains-container h5{
+    font-size: 13px;
+    margin-top: -90px;
+    width: 100%;
+  }
+
+  .restaurant-chains-container .slick-slide img {
+    width: 50px; /* Adjusted image width for mobile view */
+    height: 50px; /* Adjusted image height for mobile view */
+  }
+
+  .restaurant-chains-slider{
+    width: 380px;
+    height: 10px;
+  }
+
+  .firm-collections-container {
+    margin-top: -200px; /* Reduce margin for mobile view */
+    padding: 10px; /* Add some padding for better spacing */
+    margin-left: -120px;
+  }
+
+  .firm-collections-container h5{
+    font-size: 13px;
+    margin-top: -180px; 
+  }
+
+  .chips-container {
+    flex-direction: column;
+    justify-content: left; /* Center the chips */
+    margin-bottom: 10px; /* Add some margin for spacing */
+  }
+
+  .image-list-container {
+    width: 310px;
+    
+  }
+
+
+  .image-list-item {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Ensure link takes full width */
+    padding: 5px; /* Add some padding */
+  }
+
+  .image-list-stack{
+    flex-direction: row;
+  }
+
+  .image-list-item img {
+    width: 100% !important; /* Ensure images take full width */
+    height: auto; /* Maintain aspect ratio */
+    flex-direction: row;
+  }
+
+  .image-list-item .MuiImageListItemBar-title {
+    font-size: 14px !important; /* Adjust title font size for mobile */
+  }
+
+  .image-list-item .MuiImageListItemBar-subtitle {
+    font-size: 12px !important; /* Adjust subtitle font size for mobile */
+  }
+
+  .product-menu-container {
+    width:'300px';
+    
+  }
+
+  .product-menu-container .breadcrumb-links {
+    font-size: 8px;
+    margin-left: -350px;
+  }
+
+  .product-menu-container .menu-header {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: -250px;
+  }
+
+  .product-menu-container .menu-subheader {
+    font-size: 10px;
+    margin-top: 20px;
+    padding-top: 5px;
+    
+  }
+
+  .product-menu-container .search-bar {
+    margin-left:'-350px';
+    width: 100%;
+  }
+
+  .product-menu-container .switches {
+    margin-top: 10px;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .product-menu-container .product-list {
+    width: 100%;
+    margin-left: -340px;
+    flex-direction: row;
+  }
+
+  .product-menu-container .product-item {
+    align-items: flex-start;
+  }
+
+
+  .product-menu-container .product-item-image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .product-menu-container .add-to-cart-button {
+    width: 100px;
+    margin-top: 10px;
+    
+  }
+
+  .product-menu-container .product-item-details .product-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px;
+  }
+
+  .product-menu-container .product-item-details .product-description {
+    margin-top: 3px;
+    width: 100%;
+  }
+}

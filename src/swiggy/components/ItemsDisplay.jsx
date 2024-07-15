@@ -6,6 +6,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import '../../App.css'
 
 const ItemsDisplay = () => {
 
@@ -42,15 +43,16 @@ const ItemsDisplay = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          
         }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 3,
+          slidesToScroll: 2,
         }
       }
     ]
@@ -58,18 +60,16 @@ const ItemsDisplay = () => {
 
   return (
     <>
-      {/* <Stack alignItems='center' > */}
-      <Box sx={{ width: '100%',marginTop:'100px'  ,height: '120px'}} alignItems='center'>
+      <Box className='items-display-container'  sx={{ width: '100%' ,height: '120px'}} alignItems='center' > 
       <Typography variant="h5" sx={{color:'black', fontWeight:'600'}} >Whats on your mind?</Typography>
-        <Slider {...settings}>
+        <Slider className="items-display-slider" {...settings}>
           {itemData.map((image, index) => (
-            <Box key={index} sx={{ textAlign: 'center', padding: 1 }}>
-              <img src={image.img} alt={image.label} style={{ width: '145px', height: '180px' }} />
+            <Box key={index} sx={{ textAlign: 'center', padding: 1 }} className="slick-image">
+              <img src={image.img} alt={image.label} style={{ width: '145px', height: '180px' }}  />
             </Box>
           ))}
         </Slider>
       </Box>
-      {/* </Stack> */}
     </>
   )
 }

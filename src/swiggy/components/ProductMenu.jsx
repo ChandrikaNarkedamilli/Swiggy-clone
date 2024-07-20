@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { API_URL } from '../api'
-import { Box, Breadcrumbs, Button, Chip, Container, Divider, FormControlLabel, Link, Stack, Switch, TextField, Typography } from '@mui/material'
+import { Alert, Box, Breadcrumbs, Button, Chip, Container, Divider, FormControlLabel, Link, Snackbar, Stack, Switch, TextField, Typography } from '@mui/material'
 
 
 const ProductMenu = () => {
   const [products, setProducts] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('')
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
   // const [filteredProducts, setFilteredProducts] = useState([])
 
 
@@ -36,8 +38,13 @@ const ProductMenu = () => {
     const updatedItems = [...existingItems,item]
     localStorage.setItem('myItems',JSON.stringify(updatedItems))
     console.log('updated',updatedItems)
+    setSnackbarMessage(`${item.productName} added to cart`);
+    setSnackbarOpen(true);
   }
 
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
+  };
 
 
   return (
@@ -85,6 +92,17 @@ const ProductMenu = () => {
           )
         })}
       </Box>
+
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert onClose={handleSnackbarClose} severity="success" sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </>
   )
 }

@@ -13,6 +13,12 @@ import loginimg from '../images/loginimg.avif'
 
 const NavBar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    setIsDrawerOpen(false);
+  };
 
   return (
     <>
@@ -34,7 +40,9 @@ const NavBar = () => {
             <Button startIcon={<SearchIcon />} sx={{color:'black'}} className='hide-on-mobile' > Search</Button>
             <Button startIcon={<BiSolidOffer />} sx={{color:'black'}} className='hide-on-mobile' > Offers</Button>
             <Button startIcon={<IoMdHelpBuoy />} sx={{color:'black'}} className='hide-on-mobile' >Help</Button>
-            <Button startIcon={<IoPersonOutline />} sx={{color:'black'}} className='button' onClick={()=>setIsDrawerOpen(true)} > Sign In</Button>
+            <Button startIcon={<IoPersonOutline />} className='button' onClick={()=>setIsDrawerOpen(true)} sx={{color: isLoggedIn ? '#fc8019' : 'black', fontWeight: isLoggedIn ? 'bold' : 'normal'}}>
+              {isLoggedIn ? 'Chandrika' : 'Sign In'}
+            </Button>
             <Link to='/cart'><Button startIcon={<BsCartDash />} className='button' sx={{color:'black'}} >Cart</Button></Link>
           </Stack>         
         </Toolbar>
@@ -52,7 +60,7 @@ const NavBar = () => {
           <Stack width='362px' height='172px' spacing={2}>
           <TextField label='Phonenumber' autoComplete='Phonenumber' fullWidth />
           <TextField label='Password' type='password' autoComplete='Password' fullWidth />
-          <Button variant='contained' sx={{color:'white',backgroundColor:'#fc8019'}} width='inherit' onClick={()=>setIsDrawerOpen(false)} >Login</Button>
+          <Button variant='contained' sx={{color:'white',backgroundColor:'#fc8019'}} width='inherit' onClick={handleLogin} >Login</Button>
           <Typography variant='body2' sx={{fontSize:'12px',color:'#686b78'}}>By clicking on Login, I accept the Terms & Conditions & Privacy Policy</Typography>  
           </Stack>
         </Stack>
